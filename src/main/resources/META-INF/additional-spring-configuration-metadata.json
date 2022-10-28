@@ -1,0 +1,14 @@
+{
+	"properties": [
+		{
+			"name": "freenom.email",
+			"type": "java.lang.String",
+			"description": "Freenom email."
+		},
+		{
+			"name": "freenom.password",
+			"type": "java.lang.String",
+			"description": "Freenom password."
+		}
+	]
+}
