@@ -9,22 +9,16 @@ import net.fortuna.ical4j.model.property.Uid;
 import net.fortuna.ical4j.model.property.Version;
 import net.fortuna.ical4j.util.RandomUidGenerator;
 import net.fortuna.ical4j.util.UidGenerator;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import tk.thesuperlab.freenom4j.Freenom;
+
+import static tk.thesuperlab.freenomcalendar.FreenomCalendarApplication.freenom;
 
 @Service
 public class CalendarService {
-	@Value("${freenom.email}")
-	private String email;
-	@Value("${freenom.password}")
-	private String password;
-
 	public ResponseEntity<String> getDomains() {
-		Freenom freenom = new Freenom(email, password);
 
 		Calendar calendar = new Calendar();
 		calendar.getProperties().add(new ProdId("-//FreenomCalendar//iCal4j 1.0//EN"));
